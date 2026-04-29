@@ -24,7 +24,7 @@ Think of it as a lightweight pre-PR review workspace: faster than opening a form
 | Real-time | Socket.io |
 | AI | Groq API (Llama 3.3 70B) |
 | Auth | JSON Web Tokens (JWT), bcrypt |
-| Deployment | Vercel (frontend), Railway (backend), MongoDB Atlas |
+| Deployment | Vercel (frontend), Railway (backend), MongoDB Compass |
 
 ---
 
