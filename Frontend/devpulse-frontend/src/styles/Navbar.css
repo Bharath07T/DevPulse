@@ -28,6 +28,7 @@
     cursor: pointer;
     font-family: 'Overpass', sans-serif;
     transition: border-color 0.15s ease, color 0.15s ease;
+    font-weight: bolder;
 }
 
 .logout-button:hover {

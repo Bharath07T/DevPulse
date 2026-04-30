@@ -1,0 +1,177 @@
+.main{
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+  .pageTitle{
+    font-size: 22px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+  }
+  .pageSubtitle{
+    font-size: 13px;
+    color: #6b7280;
+    margin: 4px 0 0;
+  }
+  .submitBtn{
+    background-color: #16a34a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: '13px';
+    font-weight: bolder;
+    cursor: pointer;
+  }
+  .statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0 0 6px;
+}
+
+.statValue {
+  font-size: 28px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.statSub {
+  font-size: 11px;
+  color: #9ca3af;
+  margin: 4px 0 0;
+}
+
+.errorMsg {
+  color: #dc2626;
+  font-size: 13px;
+  margin-bottom: 1rem;
+}
+
+.sectionLabel {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.emptyIcon {
+  font-size: 32px;
+  margin: 0 0 8px;
+}
+
+.emptyMsg {
+  font-size: 15px;
+  color: #374151;
+  margin: 0;
+}
+
+.emptySub {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-top: 6px;
+}
+
+.reviewList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reviewCard {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  transition: border-color 0.15s;
+  gap: 12px;
+}
+
+.cardLeft {
+  flex: 1;
+  min-width: 0;
+}
+
+.langBadge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  background-color: #dcfce7;
+  color: #15803d;
+  border-radius: 6px;
+  padding: 3px 10px;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+}
+
+.codePreview {
+  font-family: monospace;
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 400px;
+}
+  .cardRight{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    flex-shrink: 0;
+  },
+  .statusPill{
+    font-size: 11px;
+    font-weight: 500;
+    border-radius: 6px;
+    padding: 3px 10px;
+    text-transform: capitalize;
+  },
+  .statusReviewed{
+    background-color: #dcfce7;
+    color: #15803d;
+  },
+  .statusPending{
+    color: #a16207;
+    background-color: #fef9c3;
+  }
+  .scoreChip{
+    font-size: 12px;
+    color: #6b7280;
+    margin: 0;
+  }
+  .arrow{
+    font-size: 20px;
+    color: #9ca3af;
+    flex-shrink: 0;
+  }

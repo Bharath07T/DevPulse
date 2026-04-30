@@ -5,6 +5,7 @@ import RegisterPage from './pages/RegisterPage.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
 import Navbar from './components/Navbar.jsx';
+import ReviewDetail from './pages/ReviewDetail.jsx';
 import './App.css';
 
 function App() {
@@ -20,6 +21,12 @@ function App() {
           <Route path='/dashboard' element = {
             <PrivateRoute>
               <Dashboard/>
+            </PrivateRoute>
+          }/>
+
+          <Route path='/review/:id' element = {
+            <PrivateRoute>
+              <ReviewDetail/>
             </PrivateRoute>
           }/>
         </Routes>

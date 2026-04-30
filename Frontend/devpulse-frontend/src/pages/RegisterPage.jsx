@@ -66,6 +66,7 @@ export default function RegisterPage() {
                             placeholder="Enter username"
                             value={form.username}
                             onChange={handleChange}
+                            autoFocus
                             required
                         />
                     </div>

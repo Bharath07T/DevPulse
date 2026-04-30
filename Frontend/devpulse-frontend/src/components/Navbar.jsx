@@ -19,7 +19,6 @@ export default function Navbar() {
     }
 
     return (
-        <>
         <nav className='nav-bar'>
             <div className='logo-div'>
                 <img src={ logo } alt='Devpulse' width={32} height={32} />
@@ -30,6 +29,5 @@ export default function Navbar() {
 
             <button onClick={ handleLogout } className='logout-button'>Logout</button>
         </nav>
-        </>
     );
 }
