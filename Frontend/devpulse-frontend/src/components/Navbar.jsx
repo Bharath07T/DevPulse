@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import logo from '../assets/devpulseLogo.svg';
 import '../styles/Navbar.css';
@@ -26,8 +26,16 @@ export default function Navbar() {
                     DevPulse
                 </span>
             </div>
-
-            <button onClick={ handleLogout } className='logout-button'>Logout</button>
+            
+            <div className='nav-actions'>
+                <Link
+                to='/dashboard'
+                className={`nav-link ${pathname === '/dashboard' ? 'active' : ''}`}
+                >
+                Dashboard
+                </Link>
+                <button onClick={handleLogout} className='logout-button'>Logout</button>
+            </div>
         </nav>
     );
 }

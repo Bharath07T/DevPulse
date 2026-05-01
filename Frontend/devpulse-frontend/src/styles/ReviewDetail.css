@@ -2,7 +2,6 @@
 
 .rd-page {
   min-height: 100vh;
-  background-color: #f0fdf4;
   padding: 2rem 1rem 4rem;
 }
 
@@ -291,4 +290,72 @@
   background: #86efac;
   cursor: not-allowed;
   transform: none;
+}
+
+/* ── Comments section ── */
+.rd-comments-section {
+  margin-top: 2rem;
+}
+
+.rd-comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.rd-comment-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 0.875rem 1.25rem;
+}
+
+.rd-comment-author {
+  font-size: 12px;
+  font-weight: 600;
+  color: #15803d;
+  margin: 0 0 4px;
+}
+
+.rd-comment-text {
+  font-size: 13px;
+  color: #374151;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.rd-comment-date {
+  font-size: 11px;
+  color: #9ca3af;
+  margin: 6px 0 0;
+}
+
+/* ── Enter Room button ── */
+.rd-room-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 1.5rem;
+  padding: 10px 20px;
+  background: #ffffff;
+  color: #15803d;
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1.5px solid #16a34a;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, transform 0.1s;
+  letter-spacing: 0.02em;
+}
+
+.rd-room-btn:hover {
+  background: #16a34a;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.rd-room-btn:active {
+  transform: translateY(0);
 }

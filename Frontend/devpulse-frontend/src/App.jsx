@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
 import Navbar from './components/Navbar.jsx';
 import ReviewDetail from './pages/ReviewDetail.jsx';
+import NewReview from './pages/NewReview.jsx';
 import './App.css';
 
 function App() {
@@ -24,11 +25,13 @@ function App() {
             </PrivateRoute>
           }/>
 
-          <Route path='/review/:id' element = {
+          <Route path = '/submit' element = {
             <PrivateRoute>
-              <ReviewDetail/>
+              <NewReview/>
             </PrivateRoute>
           }/>
+
+          <Route path='/review/:id' element = {<ReviewDetail/>}/>
         </Routes>
       </AuthProvider>
     </BrowserRouter>
