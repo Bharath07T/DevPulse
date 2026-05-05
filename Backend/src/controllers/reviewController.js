@@ -153,10 +153,18 @@ export const deleteReviewById = async (req, res, next) => {
     const reviewId = req.params.id;
 
     try{
+        const review = await Review.findById(reviewId);
+
+        if(!review){
+            const error = new Error("Review not found");
+            error.statusCode = 404;
+            return next(error);
+        }
+
         const deletedReview = await Review.findByIdAndUpdate(
             reviewId,
             { isDeleted : true },
-            { new : true }
+            { returnDocument: 'after' }
         );
 
         if(!deletedReview){
@@ -194,7 +202,7 @@ export const getAiReview = async (req, res,  next) => {
             reviewId,
             { aiReview : aiResult },
             { new : true }
-        );
+        ).populate("author", "username email");;
 
         const io = getIO();
         io.to(reviewId).emit("ai-review-done", aiResult);

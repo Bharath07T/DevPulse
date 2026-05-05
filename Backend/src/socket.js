@@ -15,7 +15,8 @@ export const initSocket = (httpServer, clientUrl) => {
         });
 
         socket.on("new-comment", (data) => {
-            io.to(socket.reviewId).emit("comment-added", data);
+            const roomId = socket.reviewId || data.reviewId;
+            io.to(roomId).emit("comment-added", data);
         });
 
         socket.on("leave-room", (reviewId) => {
