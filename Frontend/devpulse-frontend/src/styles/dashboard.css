@@ -175,3 +175,33 @@
     color: #9ca3af;
     flex-shrink: 0;
   }
+
+.reviewCardWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.reviewCardWrapper .reviewCard {
+  flex: 1;
+}
+
+.deleteBtn {
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: black;
+  font-size: 35px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.deleteBtn:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}

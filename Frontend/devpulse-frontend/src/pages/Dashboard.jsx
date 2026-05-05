@@ -6,6 +6,7 @@ import '../styles/dashboard.css';
 export default function Dashboard() {
   const [reviews, setReviews] = useState([]);
   const [error, setError] = useState('');
+  const [deleteError, setDeleteError] = useState('');
   const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
@@ -56,6 +57,15 @@ export default function Dashboard() {
     if (score >= 50) return '#d97706';
     return '#dc2626';
   };
+
+  const deleteReview = async (id) => {
+    try{
+      await axiosInstance.delete(`/reviews/${id}`);
+      setReviews(prev => prev.filter(r => r._id !== id));
+    }catch(error){
+      setDeleteError(error.response?.data?.message || 'Deletion failed');
+    }
+  }
 
   return (
     <div className="page">
@@ -145,20 +155,15 @@ export default function Dashboard() {
         ) : (
           <div className="reviewList">
             {reviews.map((review) => (
-              <div
-                key={review._id}
-                className="reviewCard"
-                onClick={() =>
-                  navigate(
-                    `/review/${review._id}`
-                  )
-                }
-              >
+          <div key={review._id} className="reviewCardWrapper">
+            <div
+              className="reviewCard"
+              onClick={() => navigate(`/review/${review._id}`)}
+            >
               <div className="cardLeft">
                 <span className="langBadge">
                   {review.language}
                 </span>
-
                 <p className="codePreview">
                   {review.code.length > 80
                     ? review.code.slice(0, 80) + '...'
@@ -167,48 +172,36 @@ export default function Dashboard() {
                 </p>
               </div>
 
-                <div className="cardRight">
-                  <span
-                    className={`statusPill ${
-                      review.status ===
-                      'reviewed'
-                        ? 'statusReviewed'
-                        : 'statusPending'
-                    }`}
-                  >
-                    {review.status}
-                  </span>
-
-                  <p className="scoreChip">
-                    Score:{' '}
-                    <span
-                      style={{
-                        fontWeight: 600,
-                        color:
-                          review.aiReview
-                            ?.score != null
-                            ? getScoreColor(
-                                review
-                                  .aiReview
-                                  .score
-                              )
-                            : '#9ca3af',
-                      }}
-                    >
-                      {review.aiReview
-                        ?.score != null
-                        ? review.aiReview
-                            .score
-                        : '—'}
-                    </span>
-                  </p>
-                </div>
-
-                <span className="arrow">
-                  ›
+              <div className="cardRight">
+                <span className={`statusPill ${
+                  review.status === 'reviewed' ? 'statusReviewed' : 'statusPending'
+                }`}>
+                  {review.status}
                 </span>
+                <p className="scoreChip">
+                  Score:{' '}
+                  <span style={{
+                    fontWeight: 600,
+                    color: review.aiReview?.score != null
+                      ? getScoreColor(review.aiReview.score)
+                      : '#9ca3af',
+                  }}>
+                    {review.aiReview?.score != null ? review.aiReview.score : '—'}
+                  </span>
+                </p>
               </div>
-            ))}
+
+              <span className="arrow">›</span>
+            </div>
+
+            <button
+              className="deleteBtn"
+              onClick={() => deleteReview(review._id)}
+            >
+              🗑
+            </button>
+          </div>
+        ))}
           </div>
         )}
       </main>

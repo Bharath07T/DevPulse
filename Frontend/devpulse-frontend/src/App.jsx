@@ -7,6 +7,7 @@ import PrivateRoute from './components/PrivateRoute.jsx';
 import Navbar from './components/Navbar.jsx';
 import ReviewDetail from './pages/ReviewDetail.jsx';
 import NewReview from './pages/NewReview.jsx';
+import ReviewRoom from './pages/ReviewRoom.jsx';
 import './App.css';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           }/>
 
           <Route path='/review/:id' element = {<ReviewDetail/>}/>
+          <Route path='/room/:id' element = { <ReviewRoom/> }/>
         </Routes>
       </AuthProvider>
     </BrowserRouter>
