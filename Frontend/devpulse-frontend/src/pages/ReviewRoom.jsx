@@ -24,7 +24,7 @@ export default function ReviewRoom() {
   const codeLen = review?.code?.split('\n').length ?? 0;
 
   useEffect(() => {
-    const socket = io('http://localhost:5000');
+    const socket = io('https://devpulse-production-544c.up.railway.app');
     socket.emit('join-room', id);
 
     socket.on('comment-added', (newComment) => {
