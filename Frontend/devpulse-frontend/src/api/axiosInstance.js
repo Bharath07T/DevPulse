@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL : "http://devpulse-production-544c.up.railway.app/api",
+    baseURL : "https://devpulse-production-544c.up.railway.app/api",
 });
 
 axiosInstance.interceptors.request.use((config) => {
