@@ -6,7 +6,7 @@ const groq = new Groq({ apiKey : env.ApiKey });
 const generateAiReview = async (review) => {
     try{
         const completion = await groq.chat.completions.create({
-        model : "qwen/qwen3-32b",
+        model : "qwen/qwen3-27b",
         messages : [
             {
                 role : "system",
