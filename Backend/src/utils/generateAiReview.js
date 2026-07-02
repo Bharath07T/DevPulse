@@ -6,7 +6,7 @@ const groq = new Groq({ apiKey : env.ApiKey });
 const generateAiReview = async (review) => {
     try{
         const completion = await groq.chat.completions.create({
-        model : "llama-3.3-70b-versatile",
+        model : "qwen/qwen3-32b",
         messages : [
             {
                 role : "system",
@@ -35,7 +35,9 @@ const generateAiReview = async (review) => {
     });
 
     const rawText = completion?.choices?.[0]?.message?.content || "";
-    const cleanedResult = rawText.replace(/```json|```/g, "").trim();
+    const cleanedResult = rawText.replace(/```json|```/g, "")
+                                 .replace(/<think>[\s\S]*?<\/think>/g, "")
+                                 .trim();
     let aiResult;
 
     try{
